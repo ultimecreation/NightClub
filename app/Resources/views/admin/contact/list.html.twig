@@ -1,0 +1,33 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+{{parent()}}
+<div class="col-md-6 mx-auto">
+    <h1 class="py-5 text-center">Liste Evenements</h1>
+    <a href="{{url('admin.event.create')}} " class="btn btn-primary btn-block my-2">Créer un événement</a>
+    {% for contact in contacts %}
+    <div class="d-flex justify-content-between py-2">
+            <p class="mr-5">{{ contact.name}} </p>
+                    
+            <div class="btn-toolbar " role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <a href="{{ url('admin.contact.show',{id:contact.id} )}}" class="btn btn-primary btn-sm">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                    <form action="{{url('admin.contact.delete')}} " method="post">
+                        <input type="hidden" name="id" value="{{contact.id}}">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form> 
+                </div>
+            </div>
+    </div>
+    {% endfor %}
+        
+</div>
+    
+    
+{% endblock %}

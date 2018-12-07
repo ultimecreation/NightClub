@@ -1,0 +1,76 @@
+/*
+GENERAL
+*/
+body{
+    max-width:1900px;
+    margin: auto;
+}
+/*
+HEADER
+NAVBAR
+*/
+nav{
+    opacity: 0.8;
+    max-width:1900px;
+    margin: auto;
+}
+/*
+ HEADER HERO
+*/
+#hero{
+    position: relative;
+   background: #000;
+   z-index: 10;
+}
+#hero>img{
+    height: 50% ;
+    width: 100vw;
+    opacity: 0.55;
+}
+#hero>a{
+    position:  absolute;
+    bottom:10%;
+    color: white;
+    font-weight: bold;
+}
+#hero>a:hover{
+    position:  absolute;
+    bottom:10%;
+    
+}
+/*
+SECTION1
+*/
+#section1 .card:hover{
+    box-shadow: lightgray 0px 0px 40px;
+}
+/*
+EVENEMENTS
+*/
+#evenements .card:hover{
+    box-shadow: lightgray 0px 0px 40px;
+}
+.map-responsive {
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+    
+.map-responsive iframe {
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+/*
+MEDIA QUERIES
+*/
+@media(max-width:480px){
+    #hero>img{
+        height: 60vh ;
+        width: 100vw;
+        opacity: 0.55;
+    }
+}

@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="section1" class="bg-light">
+        <div class="row py-5">
+            <div class="col-md-4">
+                <div class="card m-2 p-2 text-center ">
+                    <i class="fa fa-music fa-6x m-5 text-primary"></i>
+                    <p class="lead ">5 Salles, 5 Ambiances</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card m-2 p-2 text-center">
+                    <i class="fa fa-user-secret fa-6x m-5 text-info"></i>
+                    <p class="lead ">Sécurité Optimale</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card m-2 p-2 text-center">
+                    <i class="fa fa-money-bill  fa-6x m-5 text-primary"></i>
+                    <p class="lead ">Bitcoins Acceptés</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="apropos" >
+        <div class="row p-5">
+            <div class="col">
+                <h1 class="text-center py-5">À propos</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus natus fugit dolorem accusamus quibusdam, corrupti consequatur consectetur itaque cupiditate veritatis at perspiciatis. Dolor debitis at, assumenda sunt voluptas mollitia tenetur qui enim iusto. Illo quae alias cupiditate facilis provident quasi sit molestias sunt. Sapiente consectetur et, dolore necessitatibus sit deleniti!
+                </p>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eligendi asperiores saepe, eveniet numquam possimus pariatur. Quaerat, sed maxime! Beatae voluptas vitae, eaque quae incidunt cumque enim in dolorem aspernatur sed delectus et, explicabo autem voluptatum cum velit, corporis ullam? Illo ipsam aliquam vel dolorum laboriosam, voluptatibus suscipit voluptatum harum ratione aliquid assumenda at nam impedit sed doloremque quia! Amet magni ipsa nulla recusandae aliquid eos dicta consectetur iure assumenda quibusdam deleniti quo odit officia ab tempore cumque in, corrupti rem, aut voluptates quaerat! Numquam doloremque architecto culpa sunt eum aspernatur rem consequatur, maiores libero saepe hic a praesentium sint voluptatem dolorem iste nulla illo atque inventore modi, ab repellendus animi harum! Provident, quasi? Dicta nam enim quis distinctio quasi sed eaque nemo fugiat, quia dolor necessitatibus repellat reprehenderit quidem explicabo. Corporis quisquam iste, aliquam eum voluptatem quo nesciunt veniam ut cum dolore. Aspernatur non sequi voluptate ipsum dolore assumenda laboriosam, numquam quo, quaerat perferendis nemo architecto aliquid temporibus accusamus autem eum quam deserunt id excepturi necessitatibus ullam laudantium veniam est. Iusto error consectetur quam? Vero minima molestiae molestias, sit suscipit reprehenderit tenetur tempora similique, repellendus a cum? Quasi ducimus eaque animi fuga corporis quidem ex laboriosam, quas iusto amet.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="evenements" class="bg-light">
+        <h1  class="text-center py-5">Événements</h1>
+            <div class="row p-5 d-flex justify-content-around">
+                
+                    {% for event in events %}
+                    <div class="col-md-3">
+                            <div class="card text-center my-5">
+                                    <div class="card-header  bg-primary text-white">
+                                        {{ event.title }}
+                                    </div>
+                                    <img class="card-img" src="{{event_image_directory}}/{{ event.image }}" alt="Card image cap">
+                                    
+                                    <div class="card-body py-5">
+                                        {{ event.description }}
+                                    </div>
+                                    <div class="card-footer bg-primary text-white">
+                                        {{ event.date|date("d-m-Y")}}
+                                    </div>
+                                </div>
+                    </div>
+                    {% endfor %}
+               
+            </div>
+        </div>
+    
+    <div id="contact">
+        
+        <div class="row py-5 ">
+            <div class="col-md-6 p-5">
+                <h1  class="text-center py-5">Localisation</h1>
+                <div class="map-responsive ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.933439241765!2d2.3620311158411003!3d48.87854540724109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e74623cb693%3A0x10389ef77ae91296!2s75000+Paris!5e0!3m2!1sfr!2sfr!4v1543832320052" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6 p-5">
+                <h1  class="text-center py-5">Contact</h1>
+                {{ form_start(contactForm )}}
+
+                {{ form_widget(contactForm)}}
+
+                <input type="submit" value="Envoyer" class="btn btn-primary btn-block mt-5">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

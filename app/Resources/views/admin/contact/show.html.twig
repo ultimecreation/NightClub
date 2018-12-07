@@ -1,0 +1,26 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+{{parent()}}
+    <div class="col-md-6 mx-auto ">
+        
+        <h1 class="py-5 text-center">Détails Utilisateur</h1>
+        <a href="{{url('admin.contact.list')}} " class="btn btn-light mb-2"> << Retour</a>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>Nom: {{ contact.name}} </td>
+                </tr>
+                <tr>
+                    <td>Email: {{ contact.email}} </td>
+                </tr>
+                <tr>
+                    <td>Message: {{contact.subject}} </td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+    </div>
+     
+{% endblock %}

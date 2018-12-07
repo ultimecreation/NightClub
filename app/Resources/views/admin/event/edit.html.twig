@@ -1,0 +1,16 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+{{ parent()}}
+    
+   <div class="col-md-8 mx-auto">
+        <h1 class="py-5 text-center">Création événement</h1>
+       {{form_start(form)}}
+
+       {{form_widget(form)}}
+        <div class="form-group">
+            <input type="submit" value="Soumettre" class="btn btn-primary">
+        </div>
+       {{form_end(form)}}
+   </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+{{parent()}}
+<div class="col-md-6 mx-auto">
+    <h1 class="py-5 text-center">Liste Utilisateurs</h1>
+    
+    {% for user in users %}
+    <div class="d-flex justify-content-between py-2">
+            <p class="mr-5">{{ user.username}} </p>
+                    
+            <div class="btn-toolbar " role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <a href="{{ url('admin.user.show',{id:user.id} )}}" class="btn btn-primary btn-sm">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="Second group">
+                    <a href="{{url('admin.user.edit',{id:user.id})}} " class="btn btn-secondary btn-sm">
+                        <i class="fa fa-edit "></i> 
+                    </a> 
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                    <form action="{{url('admin.user.delete')}} " method="post">
+                        <input type="hidden" name="id" value="{{user.id}}">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form> 
+                </div>
+            </div>
+    </div>
+    {% endfor %}
+        
+</div>
+    
+    
+{% endblock %}
