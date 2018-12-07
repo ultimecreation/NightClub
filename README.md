@@ -1,77 +1,32 @@
-Symfony Standard Edition
+# symfony3402-AcmeAssociation
 ========================
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
+Ce projet est basé sur la version 3.4 LTS de symfony
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
-
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
-
-What's inside?
+Contenu
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
+But du projet:
 
-  * An AppBundle you can use to start coding;
+Créer un site vitrine pour un nightclub fictif
 
-  * Twig as the only configured template engine;
+Gestion des assets:
 
-  * Doctrine ORM/DBAL;
+j'ai utilisé bootstrap 4 et webpack encore pour les assets
 
-  * Swiftmailer;
+Fonctionnalités:
 
-  * Annotations enabled for everything.
+1/ j'ai mis en place une authentification avec encryptage des mots de passe, ainsi qu'une gestion des autorisations en fonction des rôles affectés à chacun utilisateurs (l'admin a accès à toutes les fonctionnalitées d'édition, modification, suppression, et création sur le site)
 
-It comes pre-configured with the following bundles:
+2/ j'ai mis en place un CRUD complet afin de de créer, éditer, voir, et supprimer les événements 
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+3/ l'administrateur du site a accès aux messages envoyés via le formulaire de contact qui sont sauvegardés en base de donnée
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+4/l'administrateur peut affecter le role ADMIN à un utilisateur basique
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+5/ j'ai mis en place un système d'upload de fichiers(image accessible dans la partie administration du site)
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+6/ j'ai en place l'envoi d'email avec swiftmailer
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+7/ j'ai mis en place un formulaire de contact permettant aux utilisateurs non enregistrés d'envoyer un message staff , l'utilisateur recoit un email html l'informant que son message à été sauvegarder en base de donn
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
