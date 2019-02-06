@@ -1,4 +1,4 @@
-# symfony3402-AcmeAssociation
+# symfony3403-AcmeNightclub
 ========================
 
 Ce projet est basé sur la version 3.4 LTS de symfony
